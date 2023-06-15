@@ -1,0 +1,135 @@
+=============== Array ========================
+
+1) What happens when array is passed as a pointer in a function. Print the array from the    function.
+
+	Ans : Any changes in called function will affect the data in calling function.
+
+2) What will happen if you try to access a value which is out of array boundary 
+	
+	Ans : Accessing a value from out of array boundary is an undefined behavior. It 	will give garbage value.
+
+3) What happens if you try to add an element to array which falls outside the boundary.
+Example - int A[10], int A[21]=11;
+
+	Ans : Which leads segmentation fault.
+
+
+7)
+	
+#include <stdio.h>​
+int main() ​
+{​
+int x[4]={1,3,5,7};​
+int i;​
+int *ptr;​
+for(i = 0; i < 4; ++i) ​
+{​
+      ptr=&x[i];​
+      printf("x[%d] is %d\n",i,*(ptr+i)); ​
+}​
+       return 0;​
+}
+What would be the printed?
+
+
+	Ans : 	x[0] is 1 
+		x[1] is 5 
+		x[2] is garbage value
+		x[3] is garbage value
+
+
+=========================== Bitwise operator =============================
+
+
+8) What are different bitwise operators.
+
+	Ans :	&	Bitwise AND
+		|	Bitwise OR
+		^	Bitwise XOR
+		>>	Right shift
+		<<	Left shift
+		~	ones complement
+
+9) Which bitwise operator is suitable for checking whether a particular bit is on or off
+
+	Ans : & Bitwise AND
+
+
+============================= Command Line Arguments =======================
+
+19) When do we use command line arguments in a program?
+
+	Ans : 	To control the program from outside by passing a input during 				runtime/execution time.
+
+
+========= Compilation ===============
+
+20) Explain the different Stages of compilation 
+
+	Ans : 	Preprocessor , Translator, Assembler, Linker are the four stages of 			compilation.
+
+		Preprocessor - Format the .c file into .i format. 
+		It expands the header, removes the comments, replace the macros and done
+		conditional compilation.
+		If any error in preprocessor declaration , in preprocessor stage received 		an compilation error.
+
+		Translator - Format the .i file into .s format.
+		Check for any syntax error, if error accurs then returns compilation 			error.
+
+		Assembler - Format the .s file into .o format.
+		convert the high level language into low level language(assemply code).
+		
+		Linker - Generate .output file(executable file)
+		Links the dependency files. 
+		
+
+21)  When do you get compilation error
+
+	Ans : 	If any error occurs in preprocessor declaration, syntax error and 			undefined declaration during linking.
+
+
+22) When do you get linking error
+ 	
+	Ans : 	While compiling in linking stage it add every dependency file/variable. If 		the dependent file/variable is not defined/declared then the linker will 		raise error.
+
+23) What is the difference between Segmentation fault and Bus error
+
+	Ans :	Segmentation fault occurs if try to access unauthorized memory location
+		Bus error occurs when trying to access the invalid address in CPU memory
+
+24) What happens if the same external variable is declared in multiple c file 
+
+	Ans :	If compiling for single file it wont give error, while linking linker will 		generate the error message multiple declaration of the variable.
+
+25) Why makefile is used?
+
+	Ans : 	To make compilation easy. Makefile helps to build multiple object file and 		target file to compile and we can able to remove them.  
+
+26) What are the different data structure? Do we've datastructure available as a part of   standard library?
+
+	Ans :	Linear data structure - Array , stack, queue, linked list
+		Non linear data structure - Graph, tree.
+
+		No we wont have datastructure available as a part of standard library.
+
+
+=========================== Dynamic Memory Allocation ===============================
+		
+29) What is dynamic memory allocation and when it is used? 
+
+	Ans : 	Dyanamic memory allocation is used to allocate and deallocate the memory 		in runtime.
+		Dynamic memory allocation allocate memory in heap section by using 			standard c library functions(calloc, malloc) and if need extra memory, 			then realloc function is used to reallocate the memory in runtime.
+
+30) What happens if allocated memory is nor freed?
+
+	Ans : Memory leak accurs.
+
+================================== ENUM ===========================================
+31) What will happen if you try to print a ENUM by using %s?
+
+	Ans : 	Enum is an user define data type which is used to assign names to integral 		constant. It will leads segmentation error  
+
+
+
+		
+
